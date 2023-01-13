@@ -33,10 +33,18 @@ const calcularRecorridoTierra = () => {
 	let gradosD = (horasH + minutosH / 60 + segundosH / 3600) * 15
 
 	// Variables del Sistema Sexagesimal [S]
-	let gradosS = Math.floor(gradosD), // Parte entera de gradosD
+	let gradosS = parseInt(gradosD), // Parte entera de gradosD
 		aux = (gradosD - gradosS) * 60, // Parte no entera de gradosD convertida a minutos
-		minutosS = Math.floor(aux), // Minutos en valor entero
+		minutosS = parseInt(aux), // Minutos en valor entero
 		segundosS = Math.round((aux - minutosS) * 60) // Segundos en valor entero
+
+	// let segundosD = horasH * 3600 + minutosH * 60 + segundosH
+	// gradosS = segundosD / 240
+	// minutosS = (segundosD % 240) / 60
+	// segundosS = (segundosD % 240) % 60
+
+	// gradosS = Math.floor(gradosS)
+	// minutosS = Math.floor(minutosS)
 
 	setResultText('',
 		`Grados: ${gradosS}°`,
