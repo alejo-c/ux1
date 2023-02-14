@@ -1,11 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-	// Query para obtener los <a> que redirigen a la pagina actual
-	const query = 'a[href="' + location.pathname + '"]'
-	// Cambiar la clase de la etiqueta <a> por 'active'
-	for (const link of document.querySelectorAll(query))
-		link.className = 'active'
-})
-
-const getById = id => document.getElementById(id)
+const getById = id => document.querySelector(`#${id}`)
+const getByClass = _class => document.querySelectorAll(`.${_class}`)
 const addEvent = (element, type, action) =>
 	element.addEventListener(type, action)
+
+document.addEventListener('DOMContentLoaded', () => {
+	let currentURL = window.location.href.split('/').pop().replace('.html', '')
+	if (currentURL === '')
+		currentURL = 'index'
+
+	const navLinks = getByClass('nav-link')
+	navLinks.forEach(link => {
+		if (currentURL === link.parentNode.id)
+			link.classList.add('active')
+	})
+})

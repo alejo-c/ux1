@@ -12,10 +12,20 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="../index.html">Inicio</a></li>
-				<li><a href="cajero-electronico.html">Cajero Electrónico</a></li>
-				<li><a href="recorrido-tierra.html">Recorrido Tierra</a></li>
-				<li><a href="operar-segundos.html">Suma / Resta Segundos</a></li>
+				<li id="index">
+					<a class="nav-link" href="/">Inicio</a>
+				</li>
+				<li id="cajero-electronico">
+					<a class="nav-link" href="/pages/cajero-electronico.html">Cajero Electrónico</a>
+				</li>
+				<li class="nav-link" id="recorrido-tierra">
+					<a href="/pages/recorrido-tierra.html">Recorrido Tierra</a>
+				</li>
+				<li class="nav-link" id=perar-segundos">
+					<a href="/pages/operar-segundos.html">
+						Suma / Resta Segundos
+					</a>
+				</li>
 			</ul>
 		</nav>
 
@@ -27,10 +37,10 @@
 				<input type="number" id="horas_input" placeholder="0" min="0" max="24">
 
 				<label for="minutos_input">Minutos:</label>
-				<input type="number" id="minutos_input" placeholder="0" min="0" max="60">
+				<input type="number" id="minutos_input" placeholder="0" min="0" max="59">
 
 				<label for="segundos_h_input">Segundos:</label>
-				<input type="number" id="segundos_h_input" placeholder="0" min="0" max="60">
+				<input type="number" id="segundos_h_input" placeholder="0" min="0" max="59">
 
 				<div class="radio-buttons">
 					<input type="radio" name="opt_radio" id="add_radio" class="radio" checked>
